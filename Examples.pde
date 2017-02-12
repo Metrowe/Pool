@@ -1,3 +1,27 @@
+void tempFunction()
+{
+    temp = angle(cue.pos,new PVector(mouseX,mouseY));
+    if(checkKey('q'))
+    {
+      cue.force.x = sin(temp) * 10;
+      cue.force.y = -cos(temp) * 10;
+    }//end if
+    
+    
+    //println("Angle = " + int( degrees( angle(cue.pos,new PVector(mouseX,mouseY)) ) )  );
+    println("Angle = " + int( degrees( temp ) )  );
+    
+    stroke(0);
+    strokeWeight(3);
+    pushMatrix();
+    
+    translate(cue.pos.x,cue.pos.y);
+    rotate( temp );
+    line(0,0, 0,100);
+    //line(cue.pos.x,cue.pos.y,    cue.pos.y,cue.pos.y-100);
+    popMatrix();
+}//end 
+
 /*
 switch(gameMode)
     {
@@ -27,6 +51,28 @@ switch(gameMode)
           break;
         }//end default
     }//end switch
+*/
+
+/*
+      float scalarForce = (  ((this.mass)*(p.mass)) * pow(10,12))  /sq( dist * pow(10,4));
+      PVector direction = new PVector(sin(theta), -cos(theta));
+      force.add(PVector.mult(direction, scalarForce));
+      
+      cue.force.x = sin(ang+space) * rad;
+        cue.force.y = -cos(ang+space) * rad;
+      */
+
+/*
+
+      if(pos.x < border*1.3 || pos.x > width-border*1.3)
+      {
+        velocity.x *= -1;
+      }//end if
+      
+      if(pos.y < border*1.3 || pos.y > height-border*1.3)
+      {
+        velocity.y *= -1;
+      }//end if
 */
 
 /*

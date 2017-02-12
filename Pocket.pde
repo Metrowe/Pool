@@ -1,7 +1,7 @@
 class Pocket
 {
     PVector pos;
-    
+    float size;
     Pocket()
     {
       

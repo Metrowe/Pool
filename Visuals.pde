@@ -19,11 +19,26 @@ void displayTable()
     rect(width/2-border/2,border,    border,height-border*2);
 
     //Green layer
-    fill(0,150,0);
+    //fill(0,150,0);
+    fill(0,100,0);
     rect(border*1.3,border*1.3,    width-border*2.6,height-border*2.6,    scaler*0.02);
     
     
 }//end displayTable
+
+void displayBalls()
+{
+    for(int i = 0;i < colours.size();i++)
+    {
+      
+      Ball tempBall = colours.get(i);
+      tempBall.render();
+    }//end for
+    
+    //cue.update();
+    cue.render();
+}//end displayBalls
+  
 
 void clearStroke()
 {
