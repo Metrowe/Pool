@@ -24,6 +24,13 @@ class Ball
         //velocity.set(0,0);
     }//end Ball constructor
     
+    void render()
+    {
+        fill(c);
+        stroke(c);
+        ellipse(pos.x,pos.y,    size,size);
+    }//end render
+    
     void update()
     {
       
@@ -41,19 +48,13 @@ class Ball
         
     }//end update
     
-    void render()
-    {
-        fill(c);
-        stroke(c);
-        ellipse(pos.x,pos.y,    size,size);
-    }//end render
     
     void movement()
     {
         
       if(force.x == 0 && force.y == 0)
       {
-          input();
+          edge();
       }//end if
         
         
@@ -92,27 +93,27 @@ class Ball
       
     }//end collision
     
-    void input()
+    void edge()
     {
-        if(pos.x < border*1.3)
+        if(pos.x < border*1.3+size/2)
         {
-            pos.x = border*1.3;
+            pos.x = border*1.3+size/2;
             velocity.x *= -1;        
         }//end if
-        else if(pos.x > width-border*1.3)
+        else if(pos.x > width-border*1.3-size/2)
         {
-            pos.x = width-border*1.3;
+            pos.x = width-border*1.3-size/2;
             velocity.x *= -1;
         }//end else if
         
-        if(pos.y < border*1.3)
+        if(pos.y < border*1.3+size/2)
         {
-            pos.y = border*1.3;
+            pos.y = border*1.3+size/2;
             velocity.y *= -1;
         }//end if
-        else if(pos.y > height-border*1.3)
+        else if(pos.y > height-border*1.3-size/2)
         {
-            pos.y = height-border*1.3;
+            pos.y = height-border*1.3-size/2;
             velocity.y *= -1;
         }//end else if
     }//end input

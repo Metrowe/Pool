@@ -16,7 +16,7 @@ void createBalls()
         }//end for
     }//end for
     
-    cue = new CueBall( new PVector(width*0.25,height*0.5), color(255,255,255) );
+    white = new CueBall( new PVector(width*0.25,height*0.5), color(255,255,255) );
 }//end createBalls
 
 void refreshBalls()
@@ -26,9 +26,9 @@ void refreshBalls()
     {
       
       Ball tempBall = colours.get(i);
-      if( cue.pos.dist(tempBall.pos) < cue.size/2 + tempBall.size/2 )
+      if( white.pos.dist(tempBall.pos) < white.size/2 + tempBall.size/2 )
       {
-          cue.collision(tempBall);
+          white.collision(tempBall);
       }//end if
       
       for(int j = 0;j < colours.size();j++)
@@ -46,5 +46,5 @@ void refreshBalls()
       tempBall.update();
     }//end for
       
-    cue.update();
+    white.update();
 }//end refreshBalls

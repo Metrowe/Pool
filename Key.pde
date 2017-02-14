@@ -10,16 +10,16 @@ void keyPressed()
     {
       
       
-        cue.force.x = sin(temp) * 10;
-        cue.force.y = -cos(temp) * 10;
+        white.force.x = sin(temp) * 10;
+        white.force.y = -cos(temp) * 10;
     }
     
     if(keyCode == 'w' || keyCode == 'W')
     {
       
       
-        cue.force.x = sin(temp) * -10;
-        cue.force.y = -cos(temp) * -10;
+        white.force.x = sin(temp) * -10;
+        white.force.y = -cos(temp) * -10;
     }
   */
   

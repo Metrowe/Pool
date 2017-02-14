@@ -10,6 +10,9 @@ void setup()
     gameMode = 1;
   
     createBalls();
+    player = new Cue(white);
+    
+    lockedIn = false;
     //Ball local = new Ball( new PVector(width*0.25,height*0.5), color(255,255,0) );
     //colours.add(local);
 }//end setup
@@ -18,10 +21,11 @@ float scaler;
 float border;
 
 int gameMode;
+boolean lockedIn;
 
 ArrayList<Ball> colours = new ArrayList<Ball>();
-CueBall cue;
-
+CueBall white;
+Cue player;
 
 
 ///////////
@@ -47,7 +51,12 @@ void draw()
             
             refreshBalls();
             displayBalls();
-          
+            
+            if(player.focus.velocity.x == 0 && player.focus.velocity.y == 0)
+            {
+              player.update();
+              player.render();
+            }
             
           
             break;

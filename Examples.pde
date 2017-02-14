@@ -1,24 +1,24 @@
 void tempFunction()
 {
-    temp = angle(cue.pos,new PVector(mouseX,mouseY));
+    temp = angle(white.pos,new PVector(mouseX,mouseY));
     if(checkKey('q'))
     {
-      cue.force.x = sin(temp) * 10;
-      cue.force.y = -cos(temp) * 10;
+      white.force.x = sin(temp) * 10;
+      white.force.y = -cos(temp) * 10;
     }//end if
     
     
-    //println("Angle = " + int( degrees( angle(cue.pos,new PVector(mouseX,mouseY)) ) )  );
+    //println("Angle = " + int( degrees( angle(white.pos,new PVector(mouseX,mouseY)) ) )  );
     println("Angle = " + int( degrees( temp ) )  );
     
     stroke(0);
     strokeWeight(3);
     pushMatrix();
     
-    translate(cue.pos.x,cue.pos.y);
+    translate(white.pos.x,white.pos.y);
     rotate( temp );
     line(0,0, 0,100);
-    //line(cue.pos.x,cue.pos.y,    cue.pos.y,cue.pos.y-100);
+    //line(white.pos.x,white.pos.y,    white.pos.y,white.pos.y-100);
     popMatrix();
 }//end 
 
@@ -58,8 +58,8 @@ switch(gameMode)
       PVector direction = new PVector(sin(theta), -cos(theta));
       force.add(PVector.mult(direction, scalarForce));
       
-      cue.force.x = sin(ang+space) * rad;
-        cue.force.y = -cos(ang+space) * rad;
+      white.force.x = sin(ang+space) * rad;
+        white.force.y = -cos(ang+space) * rad;
       */
 
 /*

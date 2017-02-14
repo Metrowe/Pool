@@ -35,8 +35,8 @@ void displayBalls()
       tempBall.render();
     }//end for
     
-    //cue.update();
-    cue.render();
+    //white.update();
+    white.render();
 }//end displayBalls
   
 
